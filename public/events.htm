@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mouse_enter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#p1").mouseenter(function(){
+				alert("You entered p1!");
+			});
+			$("#p2").on({
+				mouseenter(){
+					$(this).css("background-color","red");
+				},
+				mouseleave: function(){
+					$(this).css("background-color","lightblue")
+				},
+				click: function(){
+					$(this).css("background-color", "yellow")
+				}
+			});
+			$("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+			$("#btn1").click(function(){
+				alert("Text: " + $("#bold").text());
+			});
+			$("#btn2").click(function(){
+				alert("Html: " + $("#bold").html());
+			});
+			$("#btn3").click(function(){
+				$("#text3").text("Hello world!");
+			});
+			$("#btn4").click(function(){
+				$("#text4").html("<b>Hello world!</b>");
+			});
+			$("#btn5").click(function(){
+				$("#text5").val("Dolly Duck");
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="p1">Enter this paragraph.</p>
+	<p id="p2">Enter this paragrah to change the background color.</p>
+	<p id="bold">There is some <b>bold</b> text here.</p>
+	<button id="btn1">Show text</button>
+	<button id="btn2">Show HTML</button>
+	<p id="text3">Click to change text</p>
+	<button id="btn3">Set text</button>
+	<p id="text4">Click to change HTML</p>
+	<button id="btn4">Set HTML</button>
+	<p>Input field: <input id="text5" type="text" value="Click to change value"></p>
+	<button id="btn5">Set value</button>
+</body>
+</html>

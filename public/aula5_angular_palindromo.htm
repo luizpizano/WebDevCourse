@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl">
+
+  <p>Write a word and evaluate if it's a palindrome.</p>
+  <input type="text" ng-model="str">
+  <button ng-click="myFunc()">Palindrome?</button>
+  
+
+
+<table>
+    <tr>
+<th>Palindromes</th>
+</tr>
+<tr ng-repeat="palind in list">
+<td>{{palind}}</td>
+</tr>
+</table>
+
+
+<script>
+angular.module('myApp', [])
+  .controller('myCtrl', ['$scope', function($scope) {
+    $scope.count = 0;
+$scope.list=[];
+    $scope.myFunc = function() {
+      $scope.count++;
+
+      var revStr = "";
+      var str = $scope.str;
+      var i = str.length;
+      for(var j=i; j>=0; j--){
+       revStr = revStr + str.charAt(j);
+      }
+      if(str == revStr){
+      alert(str + "-is Palindrome");
+      $scope.list.push(str);
+      }
+      else{
+      alert(str + "-in not a Palindrome");
+      }
+    };
+  }]);
+</script>
+</div>
+</body>
+</html>
+

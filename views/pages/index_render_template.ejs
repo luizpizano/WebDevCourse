@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> <%= title %> </title>
+
+<% include ../stylesheets %>
+</head>
+
+<style>
+	body{
+		background-color:powderblue;
+	}
+	h1{
+		color:maroon;
+	}
+	p{
+		color:red;
+	}
+</style>
+<body>
+
+<h1><%= beauty(title) %></h1>
+
+<% lista.forEach(function(item) { %>
+	<li> <%= item %> </li>
+<%} ) ; %>
+<p>This is a paragraph.</p>
+<h1>This is another heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+
+<a href="http://www.w3schools.com"> This is a link</a>
+<img src="img/images_test.jpg" alt="teste de imagem" style="width:304px;height:228px;">
+<p>
+    Exercising a line break.
+    <br>
+    Does it work?
+</p>
+
+<p id="java"> This is a paragraph for JS test</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+<% include ../subviews/calendar %>
+
+<% include ../scripts %>
+
+</body>
+</html>

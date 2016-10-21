@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> <%= title %> </title>
+
+<% include ../stylesheets %>
+
+<link rel="stylesheet" type="text/css" href="css/myStyle.css"> 	
+</head>
+
+<style>
+	body{
+		background-color:powderblue;
+	}
+	h1{
+		color:maroon;
+	}
+	p{
+		color:red;
+	}
+</style>
+<body>
+
+<p class="st" id="status"></p>  
+    <div>
+        <table class="style1" bgcolor="#FFFFFF">
+            <tr>
+            <td>
+              <div class="feed_c" id="feed-control"> Loading... </div>
+              <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+              <script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" type="text/javascript"></script>
+              <script src="js/news.js"></script>                 
+            </td>
+            </tr>
+        </table>
+    </div>
+
+<h1><%= beauty(title) %></h1>
+
+<% include ../subviews/calendar %>
+
+<% include ../scripts %>
+
+</body>
+</html>
